@@ -1,0 +1,91 @@
+[
+  {
+    "prompt": "This DFA accepts strings ending in 01.",
+    "hint": "Follow transitions until the last two digits form 01.",
+    "answer": "Example accepted: 1101",
+    "image": "/images/dfa1.png",
+    "dfa": {
+      "alphabet": ["0", "1"],
+      "start": "A",
+      "accept": ["C"],
+      "transitions": {
+        "A": { "0": "D", "1": "B" },
+        "B": { "0": "C", "1": "B" },
+        "C": { "0": "C", "1": "C" },
+        "D": { "0": "E", "1": "D" },
+        "E": { "0": "E", "1": "F" },
+        "F": { "0": "F", "1": "F" }
+      }
+    }
+  },
+
+  {
+    "prompt": "This DFA accepts strings containing an even number of 0s.",
+    "hint": "Track whether you are in an even or odd zero-count.",
+    "answer": "Example accepted: 110011",
+    "image": "/images/dfa2.png",
+    "dfa": {
+      "alphabet": ["0", "1"],
+      "start": "E",
+      "accept": ["E"],
+      "transitions": {
+        "E": { "0": "O", "1": "E" },
+        "O": { "0": "E", "1": "O" }
+      }
+    }
+  },
+
+  {
+    "prompt": "This DFA accepts strings containing the substring 101.",
+    "hint": "Follow the chain for 1 → 10 → 101.",
+    "answer": "Example accepted: 001101011",
+    "image": "/images/dfa3.png",
+    "dfa": {
+      "alphabet": ["0", "1"],
+      "start": "A",
+      "accept": ["D"],
+      "transitions": {
+        "A": { "0": "A", "1": "B" },
+        "B": { "0": "C", "1": "B" },
+        "C": { "0": "A", "1": "D" },
+        "D": { "0": "D", "1": "D" }
+      }
+    }
+  },
+
+  {
+    "prompt": "This DFA accepts strings ending in either 00 or 11.",
+    "hint": "Only the last two symbols matter for acceptance.",
+    "answer": "Example accepted: 111100",
+    "image": "/images/dfa4.png",
+    "dfa": {
+      "alphabet": ["0", "1"],
+      "start": "S",
+      "accept": ["A", "D"],
+      "transitions": {
+        "S": { "0": "B", "1": "C" },
+        "B": { "0": "A", "1": "C" },
+        "C": { "0": "B", "1": "D" },
+        "A": { "0": "A", "1": "C" },
+        "D": { "0": "B", "1": "D" }
+      }
+    }
+  },
+
+  {
+    "prompt": "This DFA accepts strings containing at least two 1s.",
+    "hint": "Count how many 1s you have seen.",
+    "answer": "Example accepted: 10101",
+    "image": "/images/dfa5.png",
+    "dfa": {
+      "alphabet": ["0", "1"],
+      "start": "A",
+      "accept": ["C"],
+      "transitions": {
+        "A": { "0": "A", "1": "B" },
+        "B": { "0": "B", "1": "C" },
+        "C": { "0": "C", "1": "C" }
+      }
+    }
+  }
+]
