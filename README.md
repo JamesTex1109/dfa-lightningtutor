@@ -1,73 +1,29 @@
-# React + TypeScript + Vite
+# DFA Lightning Tutor
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+An interactive web app for practicing **deterministic finite automata (DFAs)**. It shows you a DFA diagram, asks a question about it, and gives instant feedback with sound effects, so you can drill automata theory the way you'd drill flashcards.
 
-Currently, two official plugins are available:
+<!-- Add a screenshot or GIF of the app here -->
+<!-- ![Screenshot](public/images/screenshot.png) -->
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+**Live demo:** <!-- add your Vercel/Netlify link here -->
 
-## React Compiler
+## Features
+- Practice exercises built on DFA diagrams
+- Instant right/wrong feedback with audio cues
+- Exercises stored in `src/exercises.json`, so new problems can be added without touching the app code
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Tech Stack
+React · TypeScript · Vite
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## Run Locally
+```bash
+npm install
+npm run dev
 ```
+Then open the local URL Vite prints (usually `http://localhost:5173`).
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Adding Exercises
+Add a new entry to `src/exercises.json` and drop its diagram in `public/images/`.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## Why I Built It
+<!-- 1-2 sentences in your own words, e.g. studying for automata/programming languages and wanting faster practice than the textbook -->
